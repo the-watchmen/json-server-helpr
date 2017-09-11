@@ -9,15 +9,14 @@ see example setup [here](./test/fixtures/mock-server)
 
 ## adapter usage
 
+example below illustrates how to mock [feathers-rest](https://github.com/feathersjs/feathers-rest) syntax
+
 ```js
 import faker from 'faker'
 import _ from 'lodash'
 import RandExp from 'randexp'
-// import debug from 'debug'
 import {feathers} from 'json-server-helpr'
 import resource from './resource'
-
-// const dbg = debug('app:mock:people')
 
 const {pre, post} = feathers
 
@@ -36,12 +35,10 @@ export default Object.assign({}, resource, {
       dateOfBirth: faker.date.past(),
       gender: _.sample(['M', 'F']),
       ssn: ssnRe.gen(),
-      //phoneNumber: faker.phone.phoneNumber(),
       phoneNumber: phoneRe.gen(),
       address: faker.address.streetAddress(),
       city: faker.address.city(),
       state: faker.address.stateAbbr(),
-      //zip: faker.address.zipCode(),
       zip: zipRe.gen()
     }
   },
