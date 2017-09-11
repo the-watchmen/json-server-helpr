@@ -5,6 +5,6 @@
 
 basic framework to assist with setting up [json-server](https://github.com/typicode/json-server) to mock various protocols
 
-see example setup [here](./test/fixture/mock-server)
+see example setup [here](./test/fixtures/mock-server)
 
 ## adapters
