@@ -3,9 +3,11 @@ import _ from 'lodash'
 import RandExp from 'randexp'
 // import debug from 'debug'
 import resource from './resource'
-import {pre, post} from './feathers-hooks'
+import {feathers} from '../../../src/index'
 
 // const dbg = debug('app:mock:people')
+
+const {pre, post} = feathers
 
 const ssnRe = new RandExp(/\d{3}-\d{2}-\d{4}/)
 const phoneRe = new RandExp(/\(\d{3}\) \d{3}-\d{4}/)
