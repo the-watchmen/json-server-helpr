@@ -1,16 +1,35 @@
 import test from 'ava'
-import {feathers} from '../../src/index'
+import {feathers, standard} from '../../src/index'
 
-test('pre', t => {
+test('feathers', t => {
   t.deepEqual(
     feathers.pre({
       query: {
-        $skip: 1
+        $skip: 1,
+        $limit: 1
       }
     }),
     {
       query: {
-        _start: 1
+        _start: 1,
+        _limit: 1
+      }
+    }
+  )
+})
+
+test('standard', t => {
+  t.deepEqual(
+    standard.pre({
+      query: {
+        offset: 1,
+        limit: 1
+      }
+    }),
+    {
+      query: {
+        _start: 1,
+        _limit: 1
       }
     }
   )
